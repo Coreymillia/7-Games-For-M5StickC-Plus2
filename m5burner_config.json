@@ -1,0 +1,133 @@
+{
+  "name": "7-Game Collection for M5StickC Plus2",
+  "version": "1.0.0",
+  "author": "coreymillia + GitHub Copilot CLI",
+  "description": "Professional 7-game arcade collection with Mini Joy C hat featuring Snake, Tetris, Flappy Bird, Breakout, Space Wars, Pong, and Tetris Dodge. Full menu system with optimized controls for each game.",
+  "category": "Games & Entertainment",
+  "device": "M5StickC Plus 2",
+  "homepage": "",
+  "preview": "",
+  "icon": "",
+  "features": [
+    "🎮 7 Complete Games in One System",
+    "🐍 Snake - Classic arcade action",
+    "🧱 Tetris - Enhanced with hold, ghost piece, line counter",
+    "🐦 Flappy Bird - Side-scrolling obstacle avoider",
+    "💥 Breakout - Endless mode with random brick patterns",
+    "🚀 Space Wars - Progressive difficulty shooter",
+    "🏓 Pong - Classic vs AI to 10 points",
+    "🎯 Dodge - Dodge falling Tetris pieces with rotation",
+    "🕹️ Full Mini Joy C analog joystick support",
+    "📱 Professional menu system",
+    "🎨 Optimized controls for each game",
+    "💾 Score tracking and game over screens"
+  ],
+  "games": {
+    "Snake": {
+      "description": "Classic snake game in landscape mode",
+      "controls": "Joystick for direction, avoid walls and yourself",
+      "scoring": "Points for eating food"
+    },
+    "Tetris": {
+      "description": "Enhanced Tetris with modern features",
+      "controls": "L/R=move, Up=hard drop, Down=soft drop, Joy Btn=rotate, BtnA=hold piece",
+      "features": "Ghost piece, hold system, lock delay 500ms, line counter, level progression every 10 lines",
+      "orientation": "Portrait"
+    },
+    "Flappy": {
+      "description": "Flappy Bird style obstacle avoider",
+      "controls": "Any button to flap",
+      "scoring": "Points for passing pipes",
+      "orientation": "Landscape"
+    },
+    "Breakout": {
+      "description": "Endless breakout with random brick patterns",
+      "controls": "L/R=move paddle",
+      "features": "Random brick rearrangement each level, bonus life every 600 points, speed progression 5% per level",
+      "orientation": "Portrait"
+    },
+    "SpaceWars": {
+      "description": "Progressive difficulty space shooter",
+      "controls": "L/R=move ship, Joy Btn=shoot, BtnA=hold/special",
+      "features": "Enemy gets faster and more erratic, bullet hell at high levels, unlimited rockets, bonus life every 3 levels",
+      "orientation": "Portrait"
+    },
+    "Pong": {
+      "description": "Classic Pong vs AI",
+      "controls": "Up/Down=move paddle",
+      "features": "First to 10 points wins, ball speeds up with each hit",
+      "orientation": "Landscape"
+    },
+    "Dodge": {
+      "description": "Dodge falling Tetris pieces",
+      "controls": "Joystick=move in all directions, Joy Btn=rotate T-piece",
+      "features": "Precise block collision, level up every 100 points, faster spawning each level",
+      "orientation": "Portrait"
+    }
+  },
+  "controls": {
+    "Menu": "Up/Down=select game, BtnA=start game",
+    "In-Game": "BtnB=return to menu (most games)",
+    "Joystick": "Full analog control or 4-direction digital",
+    "Joy Button": "Game-specific actions (rotate, shoot, etc)",
+    "BtnA": "Game-specific actions",
+    "BtnB": "Usually returns to menu"
+  },
+  "requirements": [
+    "M5StickC Plus 2",
+    "Mini Joy C Hat (required for all games)",
+    "I2C connection: SDA=0, SCL=26"
+  ],
+  "specifications": {
+    "total_games": 7,
+    "landscape_games": 3,
+    "portrait_games": 4,
+    "screen_size": "135x240 pixels",
+    "color_depth": "16-bit RGB565",
+    "response_time": "Real-time game loop",
+    "memory_usage": "RAM: ~8%, Flash: 35% (465KB)"
+  },
+  "firmware": {
+    "bootloader": "0x1000",
+    "partitions": "0x8000",
+    "app": "0x10000",
+    "merged": true,
+    "flash_offset": "0x0"
+  },
+  "flash_size": "4MB",
+  "chip": "ESP32-PICO-V3-02",
+  "installation": {
+    "method": "M5Burner",
+    "file": "M5Stick-7Games-v1.0-MERGED.bin",
+    "size": "530832",
+    "flash_address": "0x0"
+  },
+  "usage_instructions": [
+    "1. Connect Mini Joy C hat to M5StickC Plus2",
+    "2. Flash firmware using M5Burner with MERGED.bin",
+    "3. Power on to see game menu",
+    "4. Use joystick Up/Down to select game",
+    "5. Press BtnA to start selected game",
+    "6. Press BtnB during gameplay to return to menu",
+    "7. Each game has unique controls - see in-game"
+  ],
+  "technical_details": {
+    "joystick_polling": "I2C at 0x38",
+    "button_debouncing": "Built-in M5 button handler",
+    "game_state_machine": "Menu → Playing → Game Over → Menu",
+    "orientation_switching": "Automatic per game",
+    "collision_detection": "Pixel-perfect for Dodge, bounding box for others",
+    "ai_difficulty": "Progressive in Space Wars, fixed in Pong"
+  },
+  "version_history": {
+    "1.0.0": "Initial release: 7 complete games with Mini Joy C support, optimized menu, precise collision in Dodge"
+  },
+  "credits": {
+    "developer": "coreymillia with GitHub Copilot CLI",
+    "based_on": [
+      "Various open-source game implementations",
+      "M5StickC Plus2 SDK",
+      "Mini Joy C Hat library"
+    ]
+  }
+}
